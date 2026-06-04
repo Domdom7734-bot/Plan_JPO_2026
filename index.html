@@ -323,7 +323,7 @@
 // ═══════════════════════════════════════
 //  DONNÉES — modifiez ici vos stands
 // ═══════════════════════════════════════
-const CENTER = [45.102441, 5.680595];
+const CENTER = [45.102441, 5.679951];
 const MAX_RADIUS_M = 300;
 
 const stands = [
@@ -387,7 +387,7 @@ const map = L.map('map', {
   maxZoom: 19,
 });
 
-L.tileLayer('https://server.arcgisonline.com/ArcGis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: '',
   subdomains: 'abcd',
   maxZoom: 19,
@@ -440,7 +440,7 @@ function makeStandIcon(stand, isActive) {
     ">${stand.id}</div>`,
     iconSize: [size, size],
     iconAnchor: [size / 2, size],
-    popupAnchor: [0, -(size + 8)],
+    popupAnchor: [0, -(size + 30)],
   });
 }
 
@@ -485,7 +485,7 @@ function openStandPopup(stand) {
     autoClose: false,
     closeOnClick: false,
     className: 'custom-popup',
-    offset: [0, 0],
+    offset: [0, -60],
     autoPan: true,
     autoPanPaddingTopLeft: [10, 60],
     autoPanPaddingBottomRight: [10, 280],
