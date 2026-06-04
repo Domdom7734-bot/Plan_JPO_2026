@@ -384,13 +384,13 @@ const map = L.map('map', {
   ],
   maxBoundsViscosity: 0.9,
   minZoom: 16,
-  maxZoom: 22,
+  maxZoom: 20,
 });
 
 L.tileLayer('https://server.arcgisonline.com/ArcGis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: '',
   subdomains: 'abcd',
-  maxZoom: 22,
+  maxZoom: 20,
 }).addTo(map);
 
 // ── Marqueur position utilisateur ──
