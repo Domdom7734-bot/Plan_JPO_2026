@@ -7,8 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
+ <style>
     :root {
       --bg: #0f1117;
       --surface: #1a1d27;
@@ -18,9 +17,9 @@
       --text-muted: #7c82a8;
       --accent: #e8c547;
 
-      --cat-activites: #ef5b5b;
+      --cat-activites: #3ecf8e;
       --cat-expositions: #4a9eff;
-      --cat-services: #3ecf8e;
+      --cat-services: #ef5b5b;
 
       --menu-h: 52px;
       --panel-h: 260px;
@@ -30,7 +29,7 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'tahoma', sans-serif;
       background: var(--bg);
       color: var(--text);
       height: 100dvh;
@@ -52,9 +51,9 @@
       z-index: 100;
     }
     header h1 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-weight: 800;
-      font-size: 15px;
+      font-size: 14px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--accent);
@@ -106,7 +105,7 @@
       background: none;
       border: none;
       color: var(--text-muted);
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.06em;
@@ -167,7 +166,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-size: 10px;
       font-weight: 800;
       color: #fff;
@@ -175,7 +174,7 @@
     }
     .stand-info { flex: 1; min-width: 0; }
     .stand-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-size: 12px;
       font-weight: 700;
       white-space: nowrap;
@@ -191,7 +190,7 @@
       margin-top: 1px;
     }
     .stand-num {
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-size: 10px;
       font-weight: 600;
       color: var(--text-muted);
@@ -220,14 +219,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-size: 9px;
       font-weight: 800;
       color: #fff;
       flex-shrink: 0;
     }
     .stand-popup-name {
-      font-family: 'Syne', sans-serif;
+      font-family: 'tahoma', sans-serif;
       font-size: 12px;
       font-weight: 700;
       line-height: 1.2;
@@ -325,7 +324,7 @@
 //  DONNÉES — modifiez ici vos stands
 // ═══════════════════════════════════════
 const CENTER = [45.102441, 5.679951];
-const MAX_RADIUS_M = 500;
+const MAX_RADIUS_M = 300;
 
 const stands = [
   // ACTIVITÉS (01–09)
@@ -342,7 +341,7 @@ const stands = [
   { id: '10', nom: 'Présentation matériels', categorie: 'expositions', description: 'Présentation statique des principaux matériels et véhicules du régiment.', lat: 45.101459, lng: 5.681704 },
   { id: '11', nom: 'Cellule d\'appui au recrutement', categorie: 'expositions', description: 'Informations sur les parcours d\'engagement, d\'active et de réserve, au sein du 93e RAM.', lat: 45.101380, lng: 5.681463 },
   { id: '12', nom: 'Camion Podium du CIRFA', categorie: 'expositions', description: 'Informations sur les métiers, formations et parcours d\'engagement au sein des forces armées.', lat: 45.101228, lng: 5.681635 },
-  { id: '13', nom: 'Exposition peintures', categorie: 'expositions', description: 'Présentation d’œuvres et de peintures réalisées sur le thème militaire et patrimonial.', lat: 45.101652, lng: 5.681645 },
+  { id: '13', nom: 'Exposition dessins au stylo bille et Amicale des anciens du 93', categorie: 'expositions', description: 'Présentation d’œuvres réalisées au stylo bille sur le thème militaire et patrimonial.', lat: 45.101652, lng: 5.681645 },
   { id: '14', nom: 'Entraide montagne', categorie: 'expositions', description: 'Association au profit des troupes de montagne.', lat: 45.101599, lng: 5.681914 },
   { id: '15', nom: 'Présentation d\'équipements et d\'armements', categorie: 'expositions', description: 'Présentation d\'équipements et d\'armements utilisés par les forces armées.', lat: 45.101554, lng: 5.681506 },
   { id: '16', nom: 'Groupement commando montagne', categorie: 'expositions', description: 'Présentation des moyens et techniques de déplacement en milieu montagneux.', lat: 45.102137, lng: 5.679639 },
@@ -362,9 +361,9 @@ const stands = [
 //  COULEURS
 // ═══════════════════════════════════════
 const COLORS = {
-  activites:   '#ef5b5b',
+  activites:   '#3ecf8e',
   expositions: '#4a9eff',
-  services:    '#3ecf8e',
+  services:    '#ef5b5b',
 };
 const CAT_LABELS = {
   activites:   'Activité',
@@ -385,13 +384,13 @@ const map = L.map('map', {
   ],
   maxBoundsViscosity: 0.9,
   minZoom: 16,
-  maxZoom: 19,
+  maxZoom: 22,
 });
 
 L.tileLayer('https://server.arcgisonline.com/ArcGis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: '',
   subdomains: 'abcd',
-  maxZoom: 19,
+  maxZoom: 22,
 }).addTo(map);
 
 // ── Marqueur position utilisateur ──
@@ -433,7 +432,7 @@ function makeStandIcon(stand, isActive) {
       border:2px solid ${border};
       border-radius:${size/2}px ${size/2}px ${size/2}px 2px;
       display:flex;align-items:center;justify-content:center;
-      font-family:'Syne',sans-serif;font-size:${fs}px;font-weight:800;
+      font-family:'tahoma',sans-serif;font-size:${fs}px;font-weight:800;
       color:#fff;
       box-shadow:0 2px 8px rgba(0,0,0,0.5);
       transform:rotate(0deg);
@@ -560,4 +559,3 @@ function switchTab(cat, animate = true) {
 </script>
 </body>
 </html>
-
