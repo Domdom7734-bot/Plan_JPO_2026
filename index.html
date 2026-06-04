@@ -291,7 +291,7 @@
 <body>
 
 <header>
-  <h1>Journée Portes Ouvertes du 93<sup style="font-size: 0.6em;">e</sup> RAM</h1>
+  <h1>Journée Portes Ouvertes<br>du 93<sup style="font-size: 0.6em;">e</sup> RAM</h1>
   <div class="legend">
     <div class="legend-item"><div class="legend-dot" style="background:var(--cat-activites)"></div>Activités</div>
     <div class="legend-item"><div class="legend-dot" style="background:var(--cat-expositions)"></div>Expositions</div>
@@ -379,18 +379,18 @@ const map = L.map('map', {
   zoom: 17,
   zoomControl: true,
   maxBounds: [
-    [CENTER[0] - 0.0045, CENTER[1] - 0.006],
-    [CENTER[0] + 0.0045, CENTER[1] + 0.006],
+    [CENTER[0] - 0.0027, CENTER[1] - 0.0036],
+    [CENTER[0] + 0.0027, CENTER[1] + 0.0036],
   ],
   maxBoundsViscosity: 0.9,
   minZoom: 16,
-  maxZoom: 20,
+  maxZoom: 19,
 });
 
 L.tileLayer('https://server.arcgisonline.com/ArcGis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   attribution: '',
   subdomains: 'abcd',
-  maxZoom: 20,
+  maxZoom: 19,
 }).addTo(map);
 
 // ── Marqueur position utilisateur ──
